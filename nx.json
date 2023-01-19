@@ -7,7 +7,9 @@
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/.eslintrc.json"
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
@@ -42,6 +44,9 @@
           "env": "STAGE"
         }
       ]
+    },
+    "build-storybook": {
+      "inputs": ["default", "^production", "{workspaceRoot}/.storybook/**/*"]
     }
   },
   "tasksRunnerOptions": {
@@ -54,7 +59,8 @@
           "test",
           "e2e",
           "package",
-          "deploy"
+          "deploy",
+          "build-storybook"
         ],
         "accessToken": "NmY3ZTBiYjItZmM3Mi00NjI3LWJiNTgtMzk1YTU0ZTg4YTQzfHJlYWQtd3JpdGU="
       }
