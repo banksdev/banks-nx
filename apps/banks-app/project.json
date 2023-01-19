@@ -61,5 +61,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["design-system", "banks-core"]
+  "implicitDependencies": ["design-system", "banks-core", "backend"]
 }

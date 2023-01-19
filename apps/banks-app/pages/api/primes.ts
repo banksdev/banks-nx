@@ -1,8 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { primeUpto } from '@banks-nx/banks-core';
+import { PrimesPayload } from '@banks-nx/banks-core';
+import axios from "axios";
 
-export default function handler(req: NextApiRequest, res : NextApiResponse) {
+export default async function handler(req: NextApiRequest, res : NextApiResponse) {
+    const resp = await axios.get<PrimesPayload>('http://localhost:3333/primes');
+    
     return res.status(200).json({
-        primes: primeUpto(50)
+        primes: resp.data.primes
     })
 }
