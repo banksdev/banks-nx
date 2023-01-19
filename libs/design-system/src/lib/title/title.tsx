@@ -1,14 +1,11 @@
 import { Typography } from 'antd';
+import { TitleProps } from 'antd/es/typography/Title';
 
 const { Title: AntTitle } = Typography;
 
-type Props = React.PropsWithChildren & {
-    className?: string
-}
-
-export const Title : React.FC<Props> = ({ children, ...props }) => {
+export const Title : React.FC<TitleProps> = ({ children, ...props }) => {
     return (
-        <AntTitle {...props}>
+        <AntTitle {...props} >
             {children}
         </AntTitle>
     )
