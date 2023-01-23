@@ -24,8 +24,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "banks-app:build",
-        "dev": true,
-        "proxyConfig": "apps/banks-app/proxy.conf.json"
+        "dev": true
       },
       "configurations": {
         "development": {
